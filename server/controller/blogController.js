@@ -10,6 +10,15 @@ const getBlogs = async (req, res) => {
   }
 };
 
+const getBlogsById = async (req, res) => {
+  try {
+    const blog = await BlogModel.findById(req.params.id);
+    res.json(blog);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 // POST /api/goals
 const setBlogs = async (req, res) => {
   try {
@@ -72,6 +81,7 @@ const deleteBlogs = async (req, res) => {
 
 module.exports = {
   getBlogs,
+  getBlogsById,
   setBlogs,
   updateBlogs,
   deleteBlogs,

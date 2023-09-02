@@ -5,9 +5,12 @@ const {
   setBlogs,
   updateBlogs,
   deleteBlogs,
+  getBlogsById,
 } = require("../controller/blogController");
 
 router.get("/", getBlogs);
+
+router.get("/:id", getBlogsById);
 
 router.post("/", setBlogs);
 
