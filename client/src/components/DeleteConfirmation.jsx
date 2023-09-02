@@ -10,12 +10,15 @@ import DialogTitle from "@mui/material/DialogTitle";
 const DeleteConfirmation = ({ open, handleclose, id, fetchBlog }) => {
   const handleDeletBlog = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/blogs/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://mern-crud-api-seven.vercel.app/api/blogs/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         // Handle HTTP error responses

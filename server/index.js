@@ -8,7 +8,13 @@ const BlogModel = require("./models/Blog");
 
 const port = 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://mern-crud-virid.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));

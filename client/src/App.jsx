@@ -51,7 +51,9 @@ function App() {
 
   const fetchBlog = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/blogs`);
+      const response = await fetch(
+        `https://mern-crud-api-seven.vercel.app/api/blogs`
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -71,13 +73,16 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/blogs`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      const response = await fetch(
+        `https://mern-crud-api-seven.vercel.app/api/blogs`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (!response.ok) {
         // Handle HTTP error responses
@@ -98,7 +103,7 @@ function App() {
   const editFunction = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/api/blogs/${form._id}`,
+        `https://mern-crud-api-seven.vercel.app/api/blogs/${form._id}`,
         {
           method: "PUT",
           headers: {

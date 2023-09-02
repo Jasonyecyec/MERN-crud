@@ -7,7 +7,9 @@ import { useState } from "react";
 export const Blog = ({ blog, edit, setForm, isEdit, isDelete }) => {
   const fetchBlogById = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/blogs/${id}`);
+      const response = await fetch(
+        `https://mern-crud-api-seven.vercel.app/api/blogs/${id}`
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
